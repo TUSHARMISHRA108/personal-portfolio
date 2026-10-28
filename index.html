@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar Kumar Mishra | Applied AI & Data Science</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-heading: #ffffff;
+            --accent-blue: #58a6ff;
+            --accent-green: #2ea043;
+            --accent-gold: #d29922;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; padding-bottom: 50px; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: var(--card-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-weight: bold; color: var(--text-heading); text-decoration: none; font-size: 1.1rem; }
+        .hint-btn { background: rgba(88, 166, 255, 0.1); border: 1px solid var(--accent-blue); color: var(--accent-blue); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(88, 166, 255, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(88, 166, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(88, 166, 255, 0); }
+        }
+
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .hero { text-align: center; margin-bottom: 3rem; }
+        .hero h1 { font-size: 2.5rem; color: var(--text-heading); margin-bottom: 0.5rem; }
+        .hero p { color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 1rem; }
+        .social-links a { color: var(--text-primary); text-decoration: none; margin: 0 10px; border: 1px solid var(--border-color); padding: 5px 12px; border-radius: 6px; display: inline-block; }
+        .social-links a:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+
+        section { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.8rem; margin-bottom: 2rem; }
+        h2 { color: var(--text-heading); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1rem; font-size: 1.4rem; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .skill-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 1rem; border-radius: 6px; }
+        .skill-card h3 { color: var(--accent-blue); font-size: 1rem; margin-bottom: 0.5rem; }
+
+        .project-item, .achievement-item { margin-bottom: 1.2rem; }
+        .project-item h3, .achievement-item h3 { color: var(--text-heading); font-size: 1.1rem; }
+        .tech-tag { display: inline-block; background: rgba(88, 166, 255, 0.15); color: var(--accent-blue); font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; margin-right: 5px; margin-top: 5px; }
+
+        /* Modal Styles */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; width: 90%; max-width: 600px; padding: 2rem; position: relative; }
+        .close-btn { position: absolute; top: 1rem; right: 1rem; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+        .slider-group { margin-bottom: 1.2rem; }
+        .slider-group label { display: flex; justify-content: space-between; margin-bottom: 0.3rem; font-size: 0.9rem; }
+        .slider-group input { width: 100%; }
+
+        .score-box { background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; padding: 1rem; text-align: center; margin-top: 1.5rem; }
+        .score-value { font-size: 2rem; font-weight: bold; color: var(--accent-gold); }
+        .status-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; margin-top: 0.5rem; font-weight: bold; }
+        .status-success { background: rgba(46, 160, 67, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+        .status-pending { background: rgba(210, 153, 34, 0.2); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">Tushar Kumar Mishra</a>
+        <div>
+            <button class="hint-btn" onclick="openSandbox()">🎯 Beat My IIT Score</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero -->
+        <header class="hero">
+            <h1>Tushar Kumar Mishra</h1>
+            <p>B.S. in Applied AI & Data Science | IIT Jodhpur ('29)</p>
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="mailto:tusharmishra5588@gmail.com">Email</a>
+            </div>
+        </header>
+
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am an Applied AI and Data Science undergraduate at <strong>IIT Jodhpur</strong> (CGPA: 7.09) focused on solving real-world challenges through machine learning, computer vision, and speech processing. My work bridges technical research with intuitive real-world applications, such as agricultural AI tools for farmers and IoT telemetry pipelines.</p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills & Tech Superpowers</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Python, SQL, C++</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Data & Analytics</h3>
+                    <p>NumPy, Pandas, Matplotlib, Seaborn, Tableau, Power BI, Excel</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Machine Learning & AI</h3>
+                    <p>Regression, XGBoost, Computer Vision, RAG, Speech Processing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Deployment & Tools</h3>
+                    <p>Streamlit, Telegram API, AWS (S3, CloudFront), Git</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="project-item">
+                <h3>KrishiMitra AI – Multimodal Agricultural Assistant</h3>
+                <p>Designed a multilingual agricultural assistant supporting image diagnosis, voice, and text inputs. Uses Gemini for image analysis, Groq for voice processing, OpenRouter fallback, and Bhashini for native Indian languages.</p>
+                <span class="tech-tag">Gemini API</span><span class="tech-tag">Groq</span><span class="tech-tag">Bhashini</span><span class="tech-tag">RAG</span>
+            </div>
+            <div class="project-item">
+                <h3>Decentralized Water Exchange Platform (DWEP)</h3>
+                <p>Built a real-time IoT stream analytics dashboard using Python and Streamlit to monitor pH and turbidity fluctuations continuously.</p>
+                <span class="tech-tag">IoT Analytics</span><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+            </div>
+            <div class="project-item">
+                <h3>Smart Agri-Tech Processing (Dal Dilemma)</h3>
+                <p>Applied machine learning regression models on mill runtime data to predict optimal speeds and optimize agricultural process energy consumption.</p>
+                <span class="tech-tag">Machine Learning</span><span class="tech-tag">Regression</span><span class="tech-tag">Process Optimization</span>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section id="achievements">
+            <h2>Competitive Achievements</h2>
+            <div class="achievement-item">
+                <h3>🏆 ML Hackathon – IIT Kharagpur</h3>
+                <p>Ranked <strong>60th among ~500 teams</strong> as a solo participant. Built an ML regression model with an evaluation score within 8 points of the winning submission.</p>
+                <button class="hint-btn" style="margin-top: 8px;" onclick="openSandbox()">🎯 Launch RMSE Tuning Sandbox</button>
+            </div>
+            <div class="achievement-item">
+                <h3>🥇 Innovation Hackathon – NIT Rourkela</h3>
+                <p>Secured <strong>National Rank 11</strong> for the Dal Dilemma agri-tech process optimization concept.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>🥈 Project Selection – NIT Durgapur</h3>
+                <p>National Semifinalist with the DWEP IoT project, missing the final round by just 0.5 marks.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Creative Feature Modal -->
+    <div id="sandboxModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSandbox()">&times;</span>
+            <h2>🎯 XGBoost RMSE Hyperparameter Sandbox</h2>
+            <p style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-primary);">
+                During the IIT Kharagpur ML Hackathon, fine-tuning hyperparameters brought my RMSE score within 8 points of #1. Can you tune the parameters below to match or beat that benchmark?
+            </p>
+
+            <div class="slider-group">
+                <label>Learning Rate (&eta;): <span id="lrVal">0.10</span></label>
+                <input type="range" id="lr" min="0.01" max="0.5" step="0.01" value="0.10" oninput="updateSimulation()">
+            </div>
+
+            <div class="slider-group">
+                <label>Max Depth (d): <span id="depthVal">6</span></label>
+                <input type="range" id="depth" min="1" max="15" step="1" value="6" oninput="updateSimulation()">
+            </div>
+
+            <div class="slider-group">
+                <label>N Estimators (Trees): <span id="treesVal">100</span></label>
+                <input type="range" id="trees" min="10" max="500" step="10" value="100" oninput="updateSimulation()">
+            </div>
+
+            <div class="score-box">
+                <div>Simulated Model RMSE</div>
+                <div class="score-value" id="rmseScore">42.50</div>
+                <div id="statusBadge" class="status-badge status-pending">Keep Tuning...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openSandbox() {
+            document.getElementById('sandboxModal').style.display = 'flex';
+            updateSimulation();
+        }
+
+        function closeSandbox() {
+            document.getElementById('sandboxModal').style.display = 'none';
+        }
+
+        function updateSimulation() {
+            const lr = parseFloat(document.getElementById('lr').value);
+            const depth = parseInt(document.getElementById('depth').value);
+            const trees = parseInt(document.getElementById('trees').value);
+
+            document.getElementById('lrVal').innerText = lr.toFixed(2);
+            document.getElementById('depthVal').innerText = depth;
+            document.getElementById('treesVal').innerText = trees;
+
+            const lrPenalty = Math.pow(lr - 0.05, 2) * 120;
+            const depthPenalty = Math.pow(depth - 4, 2) * 2.5;
+            const treesPenalty = Math.pow(trees - 250, 2) * 0.0008;
+
+            const baseRMSE = 14.2;
+            const currentRMSE = baseRMSE + lrPenalty + depthPenalty + treesPenalty;
+
+            document.getElementById('rmseScore').innerText = currentRMSE.toFixed(2);
+
+            const badge = document.getElementById('statusBadge');
+            if (currentRMSE <= 18.0) {
+                badge.className = 'status-badge status-success';
+                badge.innerText = '🏆 Benchmark Met! Matched IIT Kharagpur Performance!';
+            } else {
+                badge.className = 'status-badge status-pending';
+                badge.innerText = '⚠️ Suboptimal Parameters (RMSE High)';
+            }
+        }
+    </script>
+</body>
+</html>
