@@ -4,8 +4,8 @@ Personal portfolio website hosted on AWS (S3 + CloudFront) featuring an interact
 
 A personal portfolio website built and deployed on AWS as part of the AWS Portfolio Hackathon. It highlights my academic journey at IIT Jodhpur, core AI/ML skills, projects, and competitive hackathon achievements.
 
-🌐 **Live Website:** [Insert your AWS CloudFront URL here]  
-👨‍💻 **GitHub Repository:** [Insert your GitHub repo URL he
+🌐 **Live Website:** (https://d1k0hgf08zuzm.cloudfront.net)  
+👨‍💻 **GitHub Repository:** (https://d1k0hgf08zuzm.cloudfront.net)
 
 ---
 
